@@ -1,0 +1,51 @@
+:root {
+  --background-light-gray: rgba(200, 200, 200, 1);
+  --background-transparent-gray: rgba(128, 128, 128, 0.5);
+  --background-dark-gray: rgba(50, 50, 50, 1);
+  --text-color-light-gray: rgba(20, 20, 20, 1);
+  --text-color-transparent-gray: rgba(245, 245, 245, 1);
+  --text-color-dark-gray: rgba(235, 235, 235, 1);
+##4aa4ed
+  --text-color-light-blue: rgba(74, 164, 224, 1);
+}
+
+body {
+  background-image: url("blueSeamlessPxArt.png");
+}
+
+h1 {
+  background-color: rgba(0,0,0, 0.9);
+  border-image: url("border.png") 33% repeat;
+  border-style: solid;
+  border-width: 1rem;
+  border-radius: 0.125rem;
+  width: max-content;
+  padding: 3rem;
+}
+
+.container {
+  background-color: var(--background-light-gray);
+  color: var(--text-light-gray);
+  border-radius: 1.5;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border: 0.25rem solid var(--background-light-gray);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  color: red;
+}
+
+section {
+  margin: 0.5rem;
+}
+
+section ul {
+  color: var(--text-color-light-blue);
+
+  padding: 0.5rem;
+}
