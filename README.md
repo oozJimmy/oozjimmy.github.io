@@ -1,2 +1,2 @@
 # sit
-fun stuff
+Personal site repo
