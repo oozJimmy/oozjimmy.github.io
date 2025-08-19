@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 
-cd /home/jim/tings/sit
 go run serv.go >>servlog.txt &
 echo "Result $?"
