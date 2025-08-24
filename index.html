@@ -1,62 +1,79 @@
 <!DOCTYPE html>
-<head>
-  <title>The Sit</title>
-  <link rel="stylesheet" href="static/style.css">
-  <link rel="icon" type="image/x-icon" href="static/img/favicon.ico">
-</head>
+<html>
+  <head>
+    <title>The Sit</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="icon" type="image/x-icon" href="static/img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
 
-<body>
-  <nav id="side-menu">
-    <a href="writings.html">Music</a>
-    <a href="projects.html">Projects</a>
-    <a href="writings.html">Writings</a>
-  </nav>
-  <main>
-    <div class="header-container">
-      <button id="menu-toggle">☰</button>
-      <header>
-        <img src="static/img/jdk_logo.png" alt="JDK Logo" id="logo">
-      </header>
-    </div>
-    <div class="stripes sprites" id="sprites">
-      <a href="writings.html">
-        <img src="static/img/cd_pixel.avif" class="iconart" alt="CD sprite">
-        Music
-      </a>
-      <a href="projects.html">
-        <img src="static/img/old_pc_pixel_clear.png" class="iconart" alt="Computer sprite">
-        Projects
-      </a>
-      <a href="writings.html">
-        <img src="static/img/books_clear.png" class="iconart" alt="Book sprite">
-        Writings
-      </a>
-    </div>
+  <body>
+    <nav id="side-menu">
+      <a href="music.html"><img src="static/img/cd_pixel.avif" class="iconart-nav" alt="CD Sprite">Music</a>
+      <a href="projects.html"><img src="static/img/old_pc_pixel_clear.png" class="iconart-nav" alt="Computer sprite">Projects</a>
+      <a href="writings.html"><img src="static/img/books_clear.png" class="iconart-nav" alt="Book sprite">Writings</a>
+    </nav>
 
-    <section id="music">
-      <div class="stripes">
-        <img src="static/img/cd_pixel.avif" class="iconart" alt="Music Disc">
-          <h4>Music for the Week</h4>
-          <ul>
-            <li>A Man For Our Time</li>
-            <li>Cool Schmool</li>
-          </ul>
+    <main>
+      <div class="header-container">
+        <button id="menu-toggle">☰</button>
+        <header>
+          <img src="static/img/jdk_logo.png" class="iconart" alt="CD sprite"> </header>
       </div>
-    </section>
 
-    <section id="projects">
-      <div class="stripes">
-        <img src="static/img/old_pc_pixel_clear.png" class="iconart" alt="Computer sprite">
-        <h4>Projects</h4>
-      </div>
-    </section>
+      <nav class="stripes sprites" id="sprites">
+        <a href="writings.html">
+          <img src="static/img/cd_pixel.avif" class="iconart" alt="CD sprite">
+          Music
+        </a>
+        <a href="projects.html">
+          <img src="static/img/old_pc_pixel_clear.png" class="iconart" alt="Computer sprite">
+          Projects
+        </a>
+        <a href="writings.html">
+          <img src="static/img/books_clear.png" class="iconart" alt="Book sprite">
+          Writings
+        </a>
+      </nav>
 
-    <section id="writing">
-      <div class="stripes">
-        <img src="static/img/books_clear.png" class="iconart" alt="Book sprite">
-      </div>
-    </section>
-  </main>
-  <script src="static/script.js"></script>
-</body>
+      <section id="music">
+        <div class="stripes">
+          <img src="static/img/cd_pixel.avif" class="iconart" alt="Music Disc">
+            <h4>
+              Music for the Week
+            
+            <ul>
+              <li class="expand">
+                <img src="/static/img/tcfv_numberthirteen.jpeg" class="album-art" alt="album art">
+                <div>
+                  <p class="music-info sub-text">The Cleaners From Venus</p>
+                  <p class="music-info sub-text">Number Thirteen</p>
+                  <h4 class="music-info title-text">A Man For Our Time</h4>
+                </div>
+              </li>
+              <li>Cool Schmool - Bratmobile</li>
+              <li>That Boy of Mine - The Delmonas</li>
+              <li>Heather's Exit - Mall Goth</li>
+              <li>Since She Started To Ride - Jonathan Richman</li>
+              <li>Shoplifting - The Slits</li>
+              <li>Heard It Through The Grapevine - The Slits</li>
+            </ul>
+        </div>
+      </section>
 
+      <section id="projects">
+        <div class="stripes">
+          <img src="static/img/old_pc_pixel_clear.png" class="iconart" alt="Computer sprite">
+          <h4>Projects</h4>
+        </div>
+      </section>
+
+      <section id="writing">
+        <div class="stripes">
+          <img src="static/img/books_clear.png" class="iconart" alt="Book sprite">
+        </div>
+      </section>
+    </main>
+    <script src="static/script.js"></script>
+  </body>
+</html>

@@ -1,8 +1,14 @@
 const menuToggle = document.getElementById('menu-toggle');
 const sideMenu = document.getElementById('side-menu');
-const main = document.querySelector('main');
 
 menuToggle.addEventListener('click', () => {
   sideMenu.classList.toggle('open');
-  main.classList.toggle('shifted');
+  console.log("p1")
+});
+
+document.addEventListener('click', () => {
+  console.log("p2")
+  if(!sideMenu.contains(event.target) && event.target != menuToggle && sideMenu.classList.contains('open')){
+    sideMenu.classList.toggle('open');
+  }
 });

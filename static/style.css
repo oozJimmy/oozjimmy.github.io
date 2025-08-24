@@ -1,36 +1,53 @@
 :root {
   --background-light-gray: rgba(200, 200, 200, 1);
-  --background-transparent-gray: rgba(128, 128, 128, 0.5);
   --background-dark-gray: rgba(50, 50, 50, 1);
-  --text-color-light-gray: rgba(210, 210, 210, 1);
-  --text-color-transparent-gray: rgba(245, 245, 245, 1);
-  --text-color-dark-gray: rgba(235, 235, 235, 1);
+  --text-color-light-gray: rgba(180, 180, 180, 1);
+  --text-color-dark-gray: rgba(100, 100, 100, 0.9);
   --text-color-light-blue: rgba(74, 164, 224, 1);
   --background-orange: rgba(#fa8050);
   --background-orange-gradient-top: #ff8254;
   --background-orange-gradient-bottom: #ff4400;
 }
 
+@keyframes expand {
+  0% {
+    scale: 100% 100%;
+  }
+  100% {
+    scale: 150% 150%;
+
+  }
+}
+
+@keyframes contract {
+  0% {
+    scale: 150% 150%;
+  }
+
+  100% {
+    scale: 100% 100%;
+
+  }
+}
+
+html {
+  font-size: 16px;
+  font-family: Lato;
+
+}
+
 body {
-  /* background-image: url("img/blueSeamlessPxArt.png"); */
-  background-image: linear-gradient(to bottom right, var(--background-orange-gradient-top), var(--background-orange-gradient-bottom));
-  font-size: 2rem;
+  background-image: url("img/blueSeamlessPxArt.png");
 }
 
 main {
   margin: auto;
 }
 
-h1 {
-  background-color: rgba(0,0,0, 0.9);
-  border-image: url("img/border.png") 33% repeat;
-  border-style: solid;
-  border-width: 1rem;
-  border-radius: 0.25rem;
-  width: max-content;
-  padding: 3rem;
+h4 {
+  margin: 0px;
+  margin-bottom: 1rem;
 }
-
 
 header {
   margin: auto;
@@ -40,7 +57,7 @@ header {
   background-image: url("img/small_stripes.png");
   border: 0.125rem solid #cbcbcb;
   border-radius: 0.25rem;
-  padding: 1rem;
+  padding: 0.5rem;
   margin: 1rem;
   /*Background*/
   background-color: #27231c;
@@ -59,14 +76,21 @@ header {
 
 .iconart {
   width: auto;
+  height: 5vh;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.iconart-nav {
+  width: auto;
   height: 10vh;
 }
 
 .sprites {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  max-height: 20vh;
+  justify-content: start;
+  align-items: start;
+  padding: 0.5rem;
 }
 
 .sprites a {
@@ -75,7 +99,8 @@ header {
   align-items: center;
   text-align: center;
   text-decoration: none;
-  color: var(--text-color-dark-gray);
+  color: var(--text-color-light-gray);
+  font-size: 1rem;
 }
 
 #side-menu {
@@ -83,12 +108,13 @@ header {
   top: 0;
   left: 0;
   height: max-content;
-  width: 250px;
+  width: max-content;
   background-color: rgba(0, 0, 0, 0.9);
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
   padding: 1rem;
   z-index: 1000;
+  border-radius: 0px 0px 2rem 0px;
 }
 
 #side-menu.open {
@@ -97,9 +123,9 @@ header {
 
 #side-menu a {
   color: white;
-  display: block;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
 }
 
 .header-container {
@@ -108,14 +134,79 @@ header {
 }
 
 #menu-toggle {
-  font-size: 2rem;
-  background: none;
-  border: none;
+  background: rgb(0,0,0,0.9);
+  border-radius: 1rem;
   color: var(--text-color-dark-gray);
+  cursor: pointer;
+  padding: 0.5rem;
+  padding-left: 1.0rem;
+  padding-right: 1.0rem;
+  font-size: 20px;
+}
+
+.sprites a {
+  margin-left: 1rem;
+  margin-right: 1rem;
   cursor: pointer;
 }
 
-main.shifted {
-  margin-left: 270px;
-  transition: margin-left 0.3s ease-in-out;
+#music li {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 1rem;
+  padding: 1.0rem;
+  display: flex;
+  width: max-content;
+  /*
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  */
+  margin: 0.25rem;
+}
+
+#music ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-inline-start: 0px;
+  justify-content: center;
+}
+
+.music-info {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.sub-text {
+  color: var(--text-color-dark-gray);
+}
+
+.title-text {
+  color: var(--text-color-light-gray);
+}
+
+.expand {
+  animation-name: contract;
+  animation-duration: 0.3s;
+}
+
+.expand:hover {
+  animation-name: expand;
+  animation-duration: 1s;
+  animation: expand 1s forwards;
+  animation-play-state: running;
+}
+
+.expand:hover:active {
+  animation-play-state: paused;
+}
+
+.album-art {
+  width: auto;
+  height: 10vh;
+  margin: 0px;
+  margin-right: 0.5rem;
+  align-items: center;
+  justiy-content: center;
+
 }
