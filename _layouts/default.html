@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} - James' Blog</title>
+    <link href="{{ "/assets/css/styles.css" | relative_url }}" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/x-icon" href="{{ "static/img/favicon.ico" | relative_url }}">
+  </head>
+  <body>
+
+    {% include navigation.html %}
+    <main class="stripes">
+      {{ content }}
+    </main>
+    <script src=" {{ "assets/js/script.js" | relative_url }}"></script>
+  </body>
+</html>

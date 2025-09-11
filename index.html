@@ -1,79 +1,64 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>The Sit</title>
-    <link rel="stylesheet" href="static/style.css">
-    <link rel="icon" type="image/x-icon" href="static/img/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
+---
+layout: default
+title: Homepage
+---
+<nav class="stripes sprites" id="sprites">
+  <a href="writings.html">
+    <img src="assets/images/cd_pixel.avif" class="iconart" alt="CD sprite">
+    Music
+  </a>
+  <a href="projects.html">
+    <img src="assets/images/old_pc_pixel_clear.png" class="iconart" alt="Computer sprite">
+    Projects
+  </a>
+  <a href="writings.html">
+    <img src="assets/images/books_clear.png" class="iconart" alt="Book sprite">
+    Writings
+  </a>
+</nav>
 
-  <body>
-    <nav id="side-menu">
-      <a href="music.html"><img src="static/img/cd_pixel.avif" class="iconart-nav" alt="CD Sprite">Music</a>
-      <a href="projects.html"><img src="static/img/old_pc_pixel_clear.png" class="iconart-nav" alt="Computer sprite">Projects</a>
-      <a href="writings.html"><img src="static/img/books_clear.png" class="iconart-nav" alt="Book sprite">Writings</a>
-    </nav>
+<section id="music">
+  <div class="stripes">
+    <img src="assets/images/cd_pixel.avif" class="iconart" alt="Music Disc">
+      <h4>Music for the Week</h4>
+      <ul>
+        {% for post in site.posts %}
+          {% if post.categories contains "music" %}
+            <li class="expand">
+              <img src="{{ post.cover_art_url }}" class="album-art" alt="album art">
+              <div>
+                <p class="music-info sub-text">{{ post.artist }}</p>
+                <p class="music-info sub-text">{{ post.album }}</p>
+                <p class="music-info sub-text">{{ post.track_number }}</p>
+                <h4 class="music-info title-text">{{ post.song_title }}</h4>
+              </div>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+  </div>
+</section>
 
-    <main>
-      <div class="header-container">
-        <button id="menu-toggle">☰</button>
-        <header>
-          <img src="static/img/jdk_logo.png" class="iconart" alt="CD sprite"> </header>
-      </div>
+<section id="projects">
+  <div class="stripes">
+    <img src="assets/images/old_pc_pixel_clear.png" class="iconart" alt="Computer sprite">
+    <h4>Projects</h4>
+  </div>
+</section>
 
-      <nav class="stripes sprites" id="sprites">
-        <a href="writings.html">
-          <img src="static/img/cd_pixel.avif" class="iconart" alt="CD sprite">
-          Music
-        </a>
-        <a href="projects.html">
-          <img src="static/img/old_pc_pixel_clear.png" class="iconart" alt="Computer sprite">
-          Projects
-        </a>
-        <a href="writings.html">
-          <img src="static/img/books_clear.png" class="iconart" alt="Book sprite">
-          Writings
-        </a>
-      </nav>
-
-      <section id="music">
-        <div class="stripes">
-          <img src="static/img/cd_pixel.avif" class="iconart" alt="Music Disc">
-            <h4>
-              Music for the Week
-            
-            <ul>
-              <li class="expand">
-                <img src="/static/img/tcfv_numberthirteen.jpeg" class="album-art" alt="album art">
-                <div>
-                  <p class="music-info sub-text">The Cleaners From Venus</p>
-                  <p class="music-info sub-text">Number Thirteen</p>
-                  <h4 class="music-info title-text">A Man For Our Time</h4>
-                </div>
-              </li>
-              <li>Cool Schmool - Bratmobile</li>
-              <li>That Boy of Mine - The Delmonas</li>
-              <li>Heather's Exit - Mall Goth</li>
-              <li>Since She Started To Ride - Jonathan Richman</li>
-              <li>Shoplifting - The Slits</li>
-              <li>Heard It Through The Grapevine - The Slits</li>
-            </ul>
-        </div>
-      </section>
-
-      <section id="projects">
-        <div class="stripes">
-          <img src="static/img/old_pc_pixel_clear.png" class="iconart" alt="Computer sprite">
-          <h4>Projects</h4>
-        </div>
-      </section>
-
-      <section id="writing">
-        <div class="stripes">
-          <img src="static/img/books_clear.png" class="iconart" alt="Book sprite">
-        </div>
-      </section>
-    </main>
-    <script src="static/script.js"></script>
-  </body>
-</html>
+<section id="writing">
+  <div class="stripes">
+    <img src="assets/images/books_clear.png" class="iconart" alt="Book sprite">
+    {% for post in site.posts %}
+      {% if post.categories contains "blog" %}
+      <a href="{{ post.url }}" style="text-decoration: none; color: inherit;">
+        <h4>
+          {{ post.title }}
+          {{ post.url }}
+        </h4>
+      </a>
+      <p>{{ post.date | date_to_string }} by {{ post.author }} </p>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
