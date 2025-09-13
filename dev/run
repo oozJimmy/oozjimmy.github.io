@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-cd /home/jim/tings/oozjimmy.github.io/dev
-go run serv.go >>servlog.txt &
-echo "Result $?"
-cd ../
